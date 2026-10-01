@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d3a">
+  <title>First Hello | J-SHARE pre-arrival Japanese</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#183b37;background:#eef4f0;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 100% 0,#f9e8c9 0,transparent 36%),#eef4f0}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #c65c2a;outline-offset:3px} .shell{max-width:760px;margin:auto;padding:20px 16px 42px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:2px 2px 20px}.brand{font-weight:900;letter-spacing:.1em;font-size:13px;color:#17665d}
+    .panel{background:#fff;border:1px solid #dae5de;border-radius:26px;box-shadow:0 12px 42px rgba(20,58,48,.08);padding:clamp(22px,5vw,42px)}h1,h2,p{margin-top:0}h1{font-size:clamp(34px,7vw,57px);line-height:1.1;letter-spacing:-.045em;margin-bottom:18px}h2{font-size:clamp(25px,5vw,32px);line-height:1.25;letter-spacing:-.025em}.lead{font-size:17px;line-height:1.65;color:#46615a}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#af5d2c;font-size:12px;font-weight:850;margin-bottom:16px}.hero{font-size:80px;margin:12px 0 26px;line-height:1}.chips{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 30px}.chip{background:#edf5f0;color:#285f55;font-weight:650;font-size:13px;padding:8px 12px;border-radius:40px}.primary{border:0;background:#17665d;color:#fff;border-radius:14px;font-weight:800;padding:16px 23px;min-height:54px}.primary:hover{background:#104a44}.secondary{border:1px solid #bad3c9;background:white;color:#17665d;border-radius:12px;padding:10px 13px;font-weight:750}.primary:disabled,.secondary:disabled{opacity:.45;cursor:not-allowed}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#577067;font-size:13px;font-weight:750}.progress{height:8px;border-radius:12px;background:#e5eee9;margin:12px 0 29px;overflow:hidden}.progress span{display:block;height:100%;background:#e59b5a;border-radius:12px;transition:width .25s}.scene{background:#eaf4ef;border-radius:19px;padding:22px;margin:19px 0 22px}.sceneIcon{font-size:51px;line-height:1.3}.sceneTitle{font-weight:850;color:#17665d;font-size:13px;letter-spacing:.05em;margin:10px 0}.scene p{font-size:18px;line-height:1.5;margin:0}.options{display:grid;gap:10px}.option{width:100%;text-align:left;background:#fff;border:2px solid #d8e5de;border-radius:15px;min-height:68px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:border-color .15s,background .15s}.option:hover:not(:disabled){border-color:#4f9884;background:#f6fbf8}.option.selected{border-color:#17665d;background:#edf7f3}.option.right{border-color:#23815d;background:#eef8f1}.option.wrong{border-color:#b86a4d;background:#fff3ed}.jp{font-size:clamp(20px,5vw,26px);font-weight:750;line-height:1.35}.speak{border:1px solid #c9dcd3;background:#f4faf6;border-radius:11px;min-width:43px;height:43px;color:#17665d;font-size:20px;flex-shrink:0}.speak:hover{background:#deeee5}.speak:disabled{opacity:.5}.instruction{color:#637a72;font-size:14px;line-height:1.5}.actions{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:24px}.feedback{border-radius:16px;margin-top:19px;padding:19px;background:#f0f7ed;border-left:4px solid #4b9971}.feedback.reconsider{background:#fff5eb;border-color:#d98752}.feedback strong{font-size:18px}.feedback p{line-height:1.6;margin:10px 0 0}.note{font-size:14px;color:#526860}.meaning{color:#58776d;font-size:14px;margin:2px 0 0}.summaryGrid{display:grid;gap:10px;margin:22px 0}.review{border:1px solid #d8e5de;border-radius:14px;padding:13px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}.review .jp{font-size:19px}.review small{display:block;color:#60786e;margin-top:4px}.footer{font-size:12px;color:#697c73;line-height:1.55;margin:20px 4px}.audioNotice{font-size:13px;line-height:1.5;color:#7a5238;background:#fff4e7;border-radius:10px;padding:9px 12px;margin:12px 0}.linkBtn{border:0;background:none;text-decoration:underline;color:#17665d;font-weight:700;padding:8px 0}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:480px){.shell{padding:12px 12px 30px}.panel{border-radius:20px}.scene{padding:18px}.hero{font-size:65px}}
+    .choiceRow{display:flex;align-items:center;gap:9px}.choiceRow .option{flex:1;width:auto}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header><div class="brand">J-SHARE <span aria-hidden="true">/</span> FIRST HELLO</div></header>
+  <main id="app" class="panel"></main>
+  <p class="footer">Prototype for pre-arrival Japanese learning. No sign-in, account, analytics, or answer upload. Your progress stays in this browser tab and disappears when it is closed. Japanese audio is AI-generated; a teacher should review its pronunciation and suitability before public use.</p>
+</div>
+<script>
+  "use strict";
+  const expressions = {
+    ohayo:{jp:"おはようございます。",en:"Good morning."}, konnichiwa:{jp:"こんにちは。",en:"Hello / good afternoon."}, konbanwa:{jp:"こんばんは。",en:"Good evening."}, hajime:{jp:"はじめまして。",en:"Nice to meet you (first meeting)."}, yoroshiku:{jp:"よろしくお願いします。",en:"I look forward to getting to know you / working with you."}, arigato:{jp:"ありがとうございます。",en:"Thank you (polite)."}, arigatoPast:{jp:"ありがとうございました。",en:"Thank you (after something is finished)."}, sumimasen:{jp:"すみません。",en:"Excuse me / I'm sorry; sometimes thanks."}, shitsurei:{jp:"失礼します。",en:"Excuse me (entering or leaving a room)."}, oyasumi:{jp:"おやすみなさい。",en:"Good night (before sleep)."}, mata:{jp:"また会いましょう。",en:"See you again."}, hai:{jp:"はい。",en:"Yes / I'm listening."}, iie:{jp:"いいえ。",en:"No."}, namae:{jp:"わたしはアミナです。",en:"I'm Amina (example name)."}
+  };
+  // Each question asks for one specified communicative purpose. Other natural phrases are acknowledged in feedback.
+  const questions = [
+    {icon:"🌅",tag:"Time of day",scene:"It is 8 a.m. You meet a university staff member. Choose a morning greeting.",choices:["ohayo","konbanwa","oyasumi"],answer:"ohayo",reason:"Use おはようございます for a polite morning greeting. こんばんは is for the evening; おやすみなさい is said before sleep."},
+    {icon:"☀️",tag:"Time of day",scene:"It is 2 p.m. You meet someone at the university. Choose a daytime greeting.",choices:["konnichiwa","ohayo","konbanwa"],answer:"konnichiwa",reason:"こんにちは is a common daytime greeting. Times are approximate in real life; here the scene is clearly afternoon."},
+    {icon:"🌙",tag:"Time of day",scene:"It is evening. You meet a neighbor for the first time today. Choose an evening greeting.",choices:["konbanwa","oyasumi","ohayo"],answer:"konbanwa",reason:"こんばんは is a greeting when you meet someone in the evening. おやすみなさい is for going to sleep."},
+    {icon:"👋",tag:"First meeting",scene:"You begin introducing yourself to a university staff member you have never met. How do you open the introduction?",choices:["hajime","arigato","oyasumi"],answer:"hajime",reason:"はじめまして signals that this is your first meeting. You may also greet the person with こんにちは; this question asks for the opening of your self-introduction."},
+    {icon:"🪪",tag:"Introduce yourself",scene:"After はじめまして, you want to say your name. Imagine your name is Amina. Which sentence says it?",choices:["namae","hai","mata"],answer:"namae",reason:"わたしはアミナです means ‘I'm Amina.’ Replace アミナ with your own name when speaking."},
+    {icon:"🤝",tag:"First meeting",scene:"You have said your name at a first meeting. Choose a polite expression to finish your introduction.",choices:["yoroshiku","oyasumi","iie"],answer:"yoroshiku",reason:"よろしくお願いします is commonly used at the end of a first introduction. Its meaning depends on the relationship and does not have one fixed English translation."},
+    {icon:"🙋",tag:"Respond",scene:"Someone introduces themself and finishes with よろしくお願いします. Choose a simple reply.",cue:"よろしくお願いします。",choices:["yoroshiku","oyasumi","konbanwa"],answer:"yoroshiku",reason:"You can reply よろしくお願いします. In some settings, こちらこそ、よろしくお願いします is also natural; you do not need that longer form yet."},
+    {icon:"🗺️",tag:"Thank someone",scene:"A university staff member tells you where to go. Choose a polite way to thank them.",choices:["arigato","hajime","konbanwa"],answer:"arigato",reason:"ありがとうございます is a polite thank-you. すみません can also convey gratitude in context, but this question asks for a clear expression of thanks."},
+    {icon:"📱",tag:"Thank someone",scene:"A classmate shares useful information. Choose a polite thank-you that is safe to use with someone new.",choices:["arigato","shitsurei","oyasumi"],answer:"arigato",reason:"ありがとうございます works well with someone you have just met. With a close friend, ありがとう is also natural."},
+    {icon:"💼",tag:"Apologize",scene:"You accidentally bump into someone's bag. Choose an expression to apologize briefly.",choices:["sumimasen","yoroshiku","konbanwa"],answer:"sumimasen",reason:"すみません can express a brief apology. Depending on the situation, ごめんなさい is another possible apology."},
+    {icon:"❓",tag:"Get attention",scene:"You need to ask a staff member a question. Choose a polite expression to get their attention first.",choices:["sumimasen","oyasumi","mata"],answer:"sumimasen",reason:"すみません is also used to get someone's attention before asking a question. It does not always mean ‘I'm sorry.’"},
+    {icon:"🚪",tag:"Enter a room",scene:"A staff member has invited you into their office. As you enter, choose an expression that means ‘Excuse me.’",choices:["shitsurei","konbanwa","arigatoPast"],answer:"shitsurei",reason:"失礼します is often said when entering an office. You may also greet the person; this question asks what to say as you enter."},
+    {icon:"📝",tag:"Leave a room",scene:"You have finished talking in an office and are leaving. Choose an expression for leaving the room politely.",choices:["shitsurei","hajime","ohayo"],answer:"shitsurei",reason:"失礼します is also used when leaving. If the person helped you, thanking them as well would be natural."},
+    {icon:"🎓",tag:"After a meeting",scene:"An orientation session has just ended. You want to thank the person who led it. Choose a thank-you after the event.",choices:["arigatoPast","hajime","oyasumi"],answer:"arigatoPast",reason:"ありがとうございました is natural after an event or help has finished. ありがとうございます is also possible; this question focuses on a completed session."},
+    {icon:"😴",tag:"Before sleep",scene:"You are about to go to sleep and say good night to someone you live with. What do you say?",choices:["oyasumi","konbanwa","ohayo"],answer:"oyasumi",reason:"おやすみなさい is said before sleep. こんばんは is used when greeting someone in the evening."}
+  ];
+  const app=document.getElementById("app");
+  let index=0, selected=null, submitted=false, results=[], questionOrder=[], previousOrder=[];
+  const previousChoices=new Map();
+  const shuffle=items=>{const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy};
+  function newRun(){
+    index=0;results=[];questionOrder=shuffle(questions);
+    if(questionOrder.every((q,i)=>q===previousOrder[i]))[questionOrder[0],questionOrder[1]]=[questionOrder[1],questionOrder[0]];
+    previousOrder=[...questionOrder];renderQuestion();
+  }
+  function choicesFor(q){
+    const choices=shuffle(q.choices),last=previousChoices.get(q);
+    if(last&&choices.every((key,i)=>key===last[i]))[choices[0],choices[1]]=[choices[1],choices[0]];
+    previousChoices.set(q,[...choices]);return choices;
+  }
+  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const audioFiles=new Map(Object.entries(expressions).map(([key,value])=>[value.jp,`audio/${key==="arigatoPast"?"arigato-past":key}.mp3`]));
+  let activeAudio=null;
+  function stopAudio(){if(activeAudio){activeAudio.pause();activeAudio.currentTime=0;activeAudio=null}}
+  function audioError(){let message=document.getElementById("audio-error");if(!message){message=document.createElement("p");message.id="audio-error";message.className="audioNotice";message.setAttribute("role","alert");app.appendChild(message)}message.textContent="Audio could not be played. Check that the audio folder is next to index.html."}
+  function speak(src){stopAudio();activeAudio=new Audio(src);activeAudio.addEventListener("error",audioError,{once:true});activeAudio.play().catch(audioError)}
+  function audioButton(value,label){const src=audioFiles.get(value);return `<button class="speak" type="button" data-audio="${escapeHtml(src||"")}" aria-label="Play Japanese audio: ${escapeHtml(label)}" ${src?"":"disabled"}>▶</button>`}
+  function renderIntro(){
+    stopAudio();
+    app.innerHTML=`<div class="eyebrow">Pre-arrival Japanese · starter</div><div class="hero" aria-hidden="true">👋</div><h1>Your first hello<br>in Japanese.</h1><p class="lead">Meet someone, introduce yourself, say thank you, and choose what to say in 15 everyday scenes.</p><div class="chips"><span class="chip">15 scenes</span><span class="chip">About 3–5 minutes</span><span class="chip">No Japanese experience needed</span></div><p class="instruction">Read the scene in English. Tap ▶ to hear each Japanese expression. Choose the best answer for the purpose shown. You can replay the sound as often as you like.</p><button class="primary" id="start">Start the quiz →</button>`;
+    document.getElementById("start").addEventListener("click",newRun);
+  }
+  function renderQuestion(){
+    stopAudio();
+    const q=questionOrder[index],choices=choicesFor(q);selected=null;submitted=false;
+    app.innerHTML=`<div class="topline"><span>SCENE ${index+1} OF ${questions.length}</span><span>${escapeHtml(q.tag)}</span></div><div class="progress" role="progressbar" aria-label="Quiz progress" aria-valuenow="${index}" aria-valuemin="0" aria-valuemax="${questions.length}"><span style="width:${index/questions.length*100}%"></span></div><h2>What would you say?</h2><div class="scene"><div class="sceneIcon" aria-hidden="true">${q.icon}</div><div class="sceneTitle">THE SITUATION</div><p>${escapeHtml(q.scene)}</p>${q.cue?`<div style="margin-top:16px"><span class="jp" lang="ja">${escapeHtml(q.cue)}</span> ${audioButton(q.cue,"what the other person says")}</div>`:""}</div><p class="instruction">Tap ▶ to listen. Then choose one expression.</p><div class="options" role="group" aria-label="Choose one Japanese expression">${choices.map((key,n)=>`<div class="choiceRow"><button class="option" type="button" data-choice="${escapeHtml(key)}" aria-pressed="false"><span class="jp" lang="ja">${escapeHtml(expressions[key].jp)}</span><span class="sr-only">Option ${n+1}</span></button>${audioButton(expressions[key].jp,expressions[key].en)}</div>`).join("")}</div><div id="feedback" aria-live="polite"></div><div class="actions"><button class="linkBtn" id="exit" type="button">Back to start</button><button class="primary" id="submit" type="button" disabled>Check answer →</button></div>`;
+    app.querySelectorAll("[data-choice]").forEach(el=>el.addEventListener("click",()=>{
+      if(submitted)return;
+      selected=el.dataset.choice;
+      app.querySelectorAll("[data-choice]").forEach(x=>{x.classList.toggle("selected",x===el);x.setAttribute("aria-pressed",String(x===el))});
+      document.getElementById("submit").disabled=false;
+    }));
+    document.getElementById("submit").addEventListener("click",submitOrNext);
+    document.getElementById("exit").addEventListener("click",renderIntro);
+  }
+  function submitOrNext(){
+    if(submitted){stopAudio();index++;index<questionOrder.length?renderQuestion():renderSummary();return}
+    if(!selected)return;
+    const q=questionOrder[index],good=selected===q.answer;results.push(good);submitted=true;
+    app.querySelectorAll("[data-choice]").forEach(el=>{
+      if(el.dataset.choice===q.answer)el.classList.add("right");
+      else if(el.dataset.choice===selected)el.classList.add("wrong");
+      el.disabled=true;
+    });
+    const f=document.getElementById("feedback");
+    f.className="feedback"+(good?"":" reconsider");
+    f.innerHTML=`<strong>${good?"Yes, that fits this scene.":"Good try — here's the expression for this scene."}</strong><p><span class="jp" lang="ja">${escapeHtml(expressions[q.answer].jp)}</span> ${audioButton(expressions[q.answer].jp,expressions[q.answer].en)} <span class="meaning">${escapeHtml(expressions[q.answer].en)}</span></p><p class="note">${escapeHtml(q.reason)}</p>`;
+    const b=document.getElementById("submit");b.textContent=index===questions.length-1?"See your review →":"Next scene →";b.disabled=false;
+    f.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+  function renderSummary(){
+    stopAudio();
+    const core=["ohayo","konnichiwa","konbanwa","hajime","yoroshiku","arigato","sumimasen","shitsurei","arigatoPast","oyasumi"];
+    const count=results.filter(Boolean).length;
+    app.innerHTML=`<div class="eyebrow">Practice complete</div><div class="hero" aria-hidden="true">🌱</div><h1>You've made a start.</h1><p class="lead">You explored all 15 situations and chose an expression for each one. You matched ${count} of 15 target expressions on this try. This is practice, not a language level assessment.</p><h2>Listen again</h2><p class="instruction">Which one would you like to try saying when you arrive in Japan?</p><div class="summaryGrid">${core.map(key=>`<div class="review"><div><span class="jp" lang="ja">${escapeHtml(expressions[key].jp)}</span><small>${escapeHtml(expressions[key].en)}</small></div>${audioButton(expressions[key].jp,expressions[key].en)}</div>`).join("")}</div><button class="primary" id="again">Practice again ↻</button>`;
+    document.getElementById("again").addEventListener("click",newRun);
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  app.addEventListener("click",event=>{const button=event.target.closest("[data-audio]");if(button){event.preventDefault();event.stopPropagation();if(button.dataset.audio)speak(button.dataset.audio)}});
+  renderIntro();
+</script>
+</body>
+</html>
